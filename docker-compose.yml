@@ -1,0 +1,18 @@
+version: '2'
+services:
+  bandit-nginx:
+    build: bandit-frontend/.
+    ports:
+      - "80:80"
+    depends_on:
+      - bandit-rest
+  bandit-rest:
+    build: bandit-rest/.
+    depends_on:
+      - bandit-db
+  bandit-db:
+    image: postgres:9.4.5
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: bandit

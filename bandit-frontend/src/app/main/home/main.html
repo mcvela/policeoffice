@@ -1,0 +1,62 @@
+<bandit-navbar></bandit-navbar>
+
+<div class="container">
+
+
+  <div class="row">
+    <!-- <pre>{{main.bandits | json}}</pre> -->
+
+
+    <div class="col-sm-6 col-md-4" ng-repeat="bandit in main.bandits | orderBy:'banditDate'">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <input type="text" ng-change="main.update(bandit)" class="text-edit-input" name="firstName" placeholder="First Name" autocomplete="off" ng-model="bandit.firstName">
+        </div>
+        <div class="panel-body" style="min-height:80px">
+         <table>
+           <tr>
+             <td><span class="glyphicon glyphicon-film"></span> Jail:</td><td><input type="checkbox" ng-change="main.update(bandit)" class="text-edit-input" name="notAvailable" placeholder="Not Available" autocomplete="off" ng-model="bandit.notAvailable">
+             </td>
+           </tr>
+           <tr>
+            <td><span class="glyphicon glyphicon-king"></span> Boss:</td><td><input type="checkbox" ng-change="main.update(bandit)" class="text-edit-input" name="isBoss" placeholder="Is Boss" autocomplete="off" ng-model="bandit.isBoss">
+            </td>
+          </tr>
+          <tr>
+            <td>Bandit from:</td><td><input type="text" datetime-model="yyyy-MM-ddTHH:mm:ss" datetime="yyyy-MM-dd HH:mm:ss" ng-change="main.update(bandit)" class="text-edit-input" name="banditDate" placeholder="Bandit from" autocomplete="off" ng-model="bandit.banditDate">
+              Millis.
+            </td>
+          </tr>
+           <tr>
+            <td>IdBoss Now:</td><td><input type="text" ng-change="main.update(bandit)" class="text-edit-input" name="idBoss" placeholder="Id Boss Now" autocomplete="off" ng-model="bandit.idBoss">
+            </td>
+          </tr>
+         
+
+         </table> 
+          Description: <textarea ng-model="bandit.content" ng-change="main.update(bandit)" class="text-edit-input" placeholder="Content" name="content" msd-elastic></textarea>
+        </div>
+        <div class="panel-footer">
+            id: {{bandit.id}}, ({{$index+1}}/{{main.bandits.length}})
+          <button type="button" class="btn btn-default btn-xs" ng-click="main.remove(bandit)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
+          </button>
+          &nbsp;&nbsp;
+          <div ng-if="bandit.isBoss">
+              <a href="#/band/{{bandit.id}}">
+                <span class="glyphicon glyphicon-tree-conifer"></span> His Band 
+              </a>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+      <button type="button" class="btn btn-default btn-lg" ng-click="main.addNew()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+      </button>
+    </div>
+  </div>
+
+</div>
