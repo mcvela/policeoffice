@@ -1,4 +1,4 @@
-# Police Office - bandit Spring Angular
+# Police Office - Bandit Spring Boot - Docker - AngularJs
 
 ## Technologies
 
