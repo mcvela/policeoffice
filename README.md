@@ -17,10 +17,11 @@
 * [AngularJS](https://angularjs.org/)
 * [GoogleChart](https://developers.google.com/chart/interactive/docs/gallery/orgchart)
 
-**** Dockers ***
-policeoffice_bandit-nginx_1   --> Front-end (AngularJs)
-policeoffice_bandit-rest_1    --> Back-end (Sprint Boot, Sprint Security, API Rest)
-policeoffice_bandit-db_1      --> DB PostgreSQL
+## Dockers
+
+* policeoffice_bandit-nginx_1   --> Front-end (AngularJs)
+* policeoffice_bandit-rest_1    --> Back-end (Sprint Boot, Sprint Security, API Rest)
+* policeoffice_bandit-db_1      --> DB PostgreSQL
 
 ...
 
